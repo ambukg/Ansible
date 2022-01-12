@@ -1,8 +1,9 @@
 - hosts: Web_servers
-  remote_user: root
+  remote_user: nahmed
   become: true
-  project_root: /var/www/html
-  tasks:
+  vars:
+    project_root: /var/www/html
+  tasks:  
   - name: Install Apache Webserver
     yum: pkg=httpd state=latest
   - name: Place the index file at project root
